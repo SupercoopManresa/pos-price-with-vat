@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template">
+    <t t-extend="Product">
+        <t t-jquery=".product-img" t-operation="inner">
+            <img t-att-src='image_url' alt="Product image"/>
+            <t t-if="!product.to_weight">
+                <span class="price-tag">
+                    <t t-esc="widget.format_currency(product.total_with_vat,'Payroll')"/>
+                </span>
+            </t>
+            <t t-if="product.to_weight">
+                <span class="price-tag">
+                    <t t-esc="widget.format_currency(product.total_with_vat,'Payroll')+'/'+widget.pos.units_by_id[product.uom_id[0]].name"/>
+                </span>
+            </t>
+        </t>
+    </t>
+
+    <t t-extend="ProductNoImage">
+        <t t-jquery=".product-img-without-image" t-operation="inner">
+            <t t-if="!product.to_weight">
+                <span class="price-tag">
+                    <t t-esc="widget.format_currency(product.total_with_vat,'Payroll')"/>
+                </span>
+            </t>
+            <t t-if="product.to_weight">
+                <span class="price-tag">
+                    <t t-esc="widget.format_currency(product.total_with_vat,'Payroll')+'/'+widget.pos.units_by_id[product.uom_id[0]].name"/>
+                </span>
+            </t>
+        </t>
+    </t>
+</templates>
