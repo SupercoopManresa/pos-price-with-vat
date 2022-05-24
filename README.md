@@ -1,5 +1,8 @@
-# pos-price-with-vat
-Odoo module to show prices with VAT on the POS product's list
+# POS Price with VAT
+Odoo 12 module to show prices with VAT on the POS product's list
+
+## Dependencies
+ - [Beesdoo Product module](https://github.com/beescoop/Obeesdoo/tree/12.0/beesdoo_product): Reads the field `total_with_vat`
 
 ## Credits
 ### Authors
